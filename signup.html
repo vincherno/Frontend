@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CDNs -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Wētāverse Signup</title>
+</head>
+
+<body id="signup-body">
+    <div class="signup-container">
+        <div id="img-container">
+            <img id="login-img" src="img/bird.jpg" alt="A waxeye bird">
+        </div>
+        <div class="signup-content-container">
+            <h2>Welcome to the</h2>
+            <h1>Wētāverse</h1>
+            <p id="tagline">Photos of local wildlife from all over Aotearoa</p>
+            <form id="signup-form" action="javascript:void(0);">
+                <input id="username-input-signup" name="username-input" type="text" placeholder="Username...">
+                <input id="password-input-signup" name="password-input" type="password" placeholder="Password...">
+                <input id="image-input-signup" name="image-input" type="text" placeholder="Image URL...">
+                <div id="validation-signup"></div>
+                <button id="signup-button-signup-page">Signup</button>
+                <hr>
+                <a href="login.html" id="login-button-signup-page">Login</a>
+                <a href="index.html"><p id="guest-link">Continue as a guest</p></a>
+            </form>
+        </div>
+    </div>
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <!-- custom -->
+    <script src="js/signup.js"></script>
+    <!-- <script src="js/nav.js"></script> -->
+    <!-- <script src="js/script.js"></script> -->
+</body>
+
+</html>

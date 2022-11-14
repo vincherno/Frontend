@@ -1,0 +1,96 @@
+// ------------------------------- Colours -------------------------------
+
+$White: #ece9e2;
+$Black: #393633;
+$Brown: #524f42;
+$PrimaryGreen: #5b7053;
+$SecondaryGreen: #8c946f;
+$TertiaryGreen: #a2a288;
+$background-color: #ece9e2;
+$tertiary-accent: #a2a288;
+$secondary-accent: #8c946f;
+$primary-accent: #5b7053;
+$nav-secondary: #524f42;
+$nav-primary: #393633;
+
+@font-face {
+    font-family: 'PP Neue Montreal Bold';
+    src: url('fonts/PPNeueMontreal-Bold.ttf') format('truetype'),
+        url('fonts/PPNeueMontreal-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PP Neue Montreal Book';
+    src: url('fonts/PPNeueMontreal-Book.ttf') format('truetype'),
+        url('fonts/PPNeueMontreal-Book.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PP Neue Montreal Regular';
+    src: url('fonts/PPNeueMontreal-Regular.ttf') format('truetype'),
+        url('fonts/PPNeueMontreal-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PP Neue Montreal Light';
+    src: url('fonts/PPNeueMontreal-Light.ttf') format('truetype'),
+        url('fonts/PPNeueMontreal-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PP Radio Grotesk Bold';
+    src: url('fonts/PPRadioGrotesk-Bold.ttf') format('truetype'),
+        url('fonts/PPRadioGrotesk-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PP Radio Grotesk Regular';
+    src: url('fonts/PPRadioGrotesk-Regular.ttf') format('truetype'),
+        url('fonts/PPRadioGrotesk-Regular.otf') format('opentype');
+}
+
+
+//----------------------------------------------------------------------------
+//                               Button Styles
+//----------------------------------------------------------------------------
+@mixin button-main {
+    border: 0;
+    background-color: $SecondaryGreen;
+    color: white;
+    font-family: 'PP Neue Montreal Bold';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 20px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+@mixin button-second {
+    border: 0;
+    background-color: $PrimaryGreen;
+    color: white;
+    font-family: 'PP Neue Montreal Bold';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 20px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+@mixin H1 {
+    font-family: 'PP Neue Montreal Bold';
+    font-weight: 800;
+}
+
+@mixin LogoType {
+    font-family: 'PP Radio Grotesk Bold';
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+@mixin CreatePost {
+    font-family: 'PP Radio Grotesk Regular';
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: red;
+}

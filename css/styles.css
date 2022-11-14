@@ -1,0 +1,2261 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "PP Neue Montreal Bold";
+  src: url("fonts/PPNeueMontreal-Bold.ttf") format("truetype"), url("fonts/PPNeueMontreal-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "PP Neue Montreal Book";
+  src: url("fonts/PPNeueMontreal-Book.ttf") format("truetype"), url("fonts/PPNeueMontreal-Book.otf") format("opentype");
+}
+@font-face {
+  font-family: "PP Neue Montreal Regular";
+  src: url("fonts/PPNeueMontreal-Regular.ttf") format("truetype"), url("fonts/PPNeueMontreal-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "PP Neue Montreal Light";
+  src: url("fonts/PPNeueMontreal-Light.ttf") format("truetype"), url("fonts/PPNeueMontreal-Light.otf") format("opentype");
+}
+@font-face {
+  font-family: "PP Radio Grotesk Bold";
+  src: url("fonts/PPRadioGrotesk-Bold.ttf") format("truetype"), url("fonts/PPRadioGrotesk-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "PP Radio Grotesk Regular";
+  src: url("fonts/PPRadioGrotesk-Regular.ttf") format("truetype"), url("fonts/PPRadioGrotesk-Regular.otf") format("opentype");
+}
+nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+nav .main-nav {
+  width: 100%;
+  background: #524f42;
+  z-index: 10;
+  padding: 10px;
+}
+nav .main-nav .main-nav-cont {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  padding: 3px 12px;
+}
+nav .main-nav .main-nav-cont .logo {
+  font-family: "PP Radio Grotesk Bold";
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 25px;
+  text-decoration: none;
+  color: #ece9e2;
+  margin: 0;
+}
+nav .main-nav .main-nav-cont #user-details {
+  margin: 0;
+  display: flex;
+}
+nav .main-nav .main-nav-cont #user-details #username {
+  display: none;
+  color: white;
+  font-family: "PP Neue Montreal Light";
+  font-size: 15px;
+}
+nav .main-nav .main-nav-cont #user-details #dp {
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  background-position: 50% 50%;
+  background-size: cover;
+  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+nav .main-nav .main-nav-cont #user-details #dp #dp:hover {
+  border: 2px solid #393633;
+}
+nav .main-nav .main-nav-cont #user-details a {
+  margin: 0;
+}
+nav .main-nav .main-nav-cont #user-details a #nav-login-button {
+  border: 0;
+  background-color: #8c946f;
+  color: white;
+  font-family: "PP Neue Montreal Bold";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  padding: 5px 12px;
+  font-size: 14px;
+  margin-top: 6px;
+}
+nav .main-nav .main-nav-cont #user-details a #nav-login-button #nav-login-button:hover {
+  background-color: #5b7053;
+}
+nav .main-nav .main-nav-cont #user-details a #nav-logout-button {
+  border: 0;
+  background-color: #8c946f;
+  color: white;
+  font-family: "PP Neue Montreal Bold";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  padding: 5px 12px;
+  font-size: 14px;
+  margin-top: 6px;
+}
+nav .main-nav .main-nav-cont #user-details a #nav-logout-button #nav-logout-button:hover {
+  background-color: #5b7053;
+}
+nav .secondary-nav {
+  width: 100%;
+  background: #393633;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  max-height: 60px;
+  transition: max-height 0.45s ease;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
+}
+nav .secondary-nav .secondary-nav-cont {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: auto;
+  max-height: 60px;
+  padding: 15px;
+  grid-gap: 40px;
+  z-index: 10;
+}
+nav .secondary-nav .secondary-nav-cont .menu-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  width: 32px;
+  overflow: hidden;
+}
+nav .secondary-nav .secondary-nav-cont .menu-btn #nav-open {
+  font-size: 28px;
+  color: #ece9e2;
+  -webkit-text-stroke: 1px #ece9e2;
+  display: block;
+}
+nav .secondary-nav .secondary-nav-cont .menu-btn #nav-close {
+  font-size: 36px;
+  color: #ece9e2;
+  -webkit-text-stroke: 1px #ece9e2;
+  display: none;
+}
+nav .secondary-nav .secondary-nav-cont .nav-list {
+  position: relative;
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 12px;
+  transform: translateZ(-10px);
+  background: #393633;
+}
+nav .secondary-nav .secondary-nav-cont .nav-list a {
+  font-size: 22px;
+  text-align: center;
+  font-family: "PP Neue Montreal Bold";
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  color: #ece9e2;
+}
+nav .secondary-nav .secondary-nav-cont .nav-search {
+  flex-basis: 1;
+  background: #ece9e2;
+  height: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 18px;
+  color: #393633;
+  grid-gap: 10px;
+}
+nav .secondary-nav .secondary-nav-cont .nav-search input {
+  border: 0;
+  flex-basis: 1;
+  background: #ece9e2;
+  height: 100%;
+  width: 100%;
+  font-family: "PP Neue Montreal Regular";
+  letter-spacing: 0.5px;
+}
+nav .secondary-nav .secondary-nav-cont .nav-search input input :focus {
+  outline: none;
+}
+nav .secondary-nav .secondary-nav-cont .nav-search i {
+  -webkit-text-stroke: 1px #393633;
+}
+nav .secondary-nav .nav-list-mobile {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 12px;
+  transform: translateZ(-10px);
+  background: #393633;
+  padding: 20px 0 25px;
+}
+nav .secondary-nav .nav-list-mobile a {
+  font-size: 22px;
+  text-align: center;
+  font-family: "PP Neue Montreal Bold";
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  color: #ece9e2;
+}
+
+.nav-display {
+  max-height: 350px !important;
+  transition: max-height 0.45s ease;
+}
+
+.nav-open-toggle {
+  display: none !important;
+}
+
+.nav-close-toggle {
+  display: block !important;
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+  }
+  nav .main-nav {
+    width: 100%;
+    background: #524f42;
+    z-index: 10;
+    padding: 17px;
+  }
+  nav .main-nav .main-nav-cont {
+    width: 95%;
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    padding: 3px 12px;
+  }
+  nav .main-nav .main-nav-cont .logo {
+    font-family: "PP Radio Grotesk Bold";
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 30px;
+    text-decoration: none;
+    color: #ece9e2;
+  }
+  nav .main-nav .main-nav-cont #user-details #username {
+    display: block;
+    margin-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 18px;
+  }
+  nav .main-nav .main-nav-cont #user-details #dp {
+    height: 45px;
+    width: 45px;
+    margin-right: 15px;
+  }
+  nav .main-nav .main-nav-cont #user-details a #nav-login-button {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 0;
+  }
+  nav .main-nav .main-nav-cont #user-details a #nav-logout-button {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 0;
+  }
+  nav .secondary-nav {
+    width: 100%;
+    background: #393633;
+    z-index: 10;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 60px;
+    transition: max-height 0.45s ease;
+  }
+  nav .secondary-nav .secondary-nav-cont {
+    position: relative;
+    width: 85%;
+    max-width: 1440px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+    max-height: 60px;
+    padding: 13px 15px;
+    grid-gap: 50px;
+    z-index: 10;
+  }
+  nav .secondary-nav .secondary-nav-cont .nav-search input {
+    font-size: 13px;
+  }
+  nav .secondary-nav .secondary-nav-cont .menu-btn {
+    display: none;
+  }
+  nav .secondary-nav .secondary-nav-cont .nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 3vw;
+    transform: translateZ(-10px);
+    background: #393633;
+  }
+  nav .secondary-nav .secondary-nav-cont .nav-list a {
+    font-size: 18px;
+    text-align: center;
+    font-family: "PP Neue Montreal Bold";
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    color: #ece9e2;
+    padding: 22px 5px 18px;
+  }
+  nav .secondary-nav .nav-list-mobile {
+    display: none;
+  }
+}
+@media screen and (min-width: 1440px) {
+  nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+  }
+  nav .main-nav {
+    width: 100%;
+    background: #524f42;
+    z-index: 10;
+  }
+  nav .main-nav .main-nav-cont {
+    width: 92%;
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    padding: 3px 12px;
+  }
+  nav .main-nav .main-nav-cont .logo {
+    font-family: "PP Radio Grotesk Bold";
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 40px;
+    text-decoration: none;
+    color: #ece9e2;
+  }
+  nav .main-nav .main-nav-cont #user-details #dp {
+    width: 56px;
+    height: 56px;
+    margin-right: 30px;
+  }
+  nav .main-nav .main-nav-cont #user-details #username {
+    font-size: 25px;
+  }
+  nav .main-nav .main-nav-cont #user-details a #nav-login-button {
+    font-size: 20px;
+    padding: 13px 20px;
+  }
+  nav .main-nav .main-nav-cont #user-details a #nav-logout-button {
+    font-size: 20px;
+    padding: 13px 20px;
+  }
+  nav .secondary-nav {
+    width: 100%;
+    background: #393633;
+    z-index: 10;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 70px;
+    transition: max-height 0.45s ease;
+  }
+  nav .secondary-nav .secondary-nav-cont {
+    position: relative;
+    width: 65%;
+    max-width: 1440px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+    max-height: 60px;
+    padding: 35px 15px;
+    grid-gap: 50px;
+    z-index: 10;
+  }
+  nav .secondary-nav .secondary-nav-cont .menu-btn {
+    display: none;
+  }
+  nav .secondary-nav .secondary-nav-cont .nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 50px;
+    transform: translateZ(-10px);
+    background: #393633;
+  }
+  nav .secondary-nav .secondary-nav-cont .nav-list a {
+    font-size: 22px;
+    text-align: center;
+    font-family: "PP Neue Montreal Bold";
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    color: #ece9e2;
+    padding: 22px 5px 18px;
+  }
+  nav .secondary-nav .secondary-nav-cont .nav-search {
+    flex-basis: 1;
+    background: #ece9e2;
+    height: 42px;
+  }
+  nav .secondary-nav .secondary-nav-cont .nav-search input {
+    font-size: 17px;
+  }
+  nav .secondary-nav .nav-list-mobile {
+    display: none;
+  }
+}
+.add-post-cont {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  bottom: 0;
+  background: #ece9e2;
+}
+.add-post-cont #add-post-btn {
+  padding: 8px 16px;
+  color: #ece9e2;
+  background: #5b7053;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.add-post-cont #add-post-btn p {
+  font-family: "PP Radio Grotesk Regular";
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: red;
+  margin-bottom: 0;
+  font-size: 22px;
+  color: white;
+}
+.add-post-cont #add-post-btn i {
+  font-size: 26px;
+}
+
+.feed-grid-section {
+  width: 100%;
+  background: #ece9e2;
+  padding: 30px 20px;
+}
+.feed-grid-section .feed-grid-cont {
+  width: 100%;
+  margin: auto;
+  -moz-column-count: 1;
+  column-count: 1;
+  -moz-column-width: 100%;
+       column-width: 100%;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  -moz-column-fill: auto;
+       column-fill: auto;
+  -moz-column-rule: 100%;
+       column-rule: 100%;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
+}
+.feed-grid-section .feed-grid-cont .grid-item:hover {
+  cursor: pointer;
+}
+.feed-grid-section .feed-grid-cont .grid-item:hover .post-data-cont-top,
+.feed-grid-section .feed-grid-cont .grid-item:hover .post-data-cont-bottom {
+  opacity: 1 !important;
+}
+.feed-grid-section .feed-grid-cont .grid-item:hover .post-hover {
+  opacity: 1 !important;
+  cursor: pointer;
+}
+.feed-grid-section .feed-grid-cont .grid-item {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 10px;
+  -moz-column-span: 1;
+       column-span: 1;
+  background: #393633;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid-column;
+}
+.feed-grid-section .feed-grid-cont .grid-item .post-data-cont-top,
+.feed-grid-section .feed-grid-cont .grid-item .post-data-cont-bottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  overflow: hidden;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.feed-grid-section .feed-grid-cont .grid-item .post-data-cont-top {
+  flex-direction: row;
+  top: 0;
+  left: 0;
+  padding: 15px 22px;
+}
+.feed-grid-section .feed-grid-cont .grid-item .post-data-cont-top .post-avatar-cont,
+.feed-grid-section .feed-grid-cont .grid-item .post-data-cont-top .post-like-cont {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.feed-grid-section .feed-grid-cont .grid-item .post-data-cont-top .post-avatar-cont {
+  margin-left: 0;
+}
+.feed-grid-section .feed-grid-cont .grid-item .post-data-cont-top .post-avatar-cont img {
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+  border: solid 2px #ece9e2;
+  background: #5b7053;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.feed-grid-section .feed-grid-cont .grid-item .post-data-cont-top .post-like-cont {
+  margin-right: 0;
+  padding: 0 2px;
+}
+.feed-grid-section .feed-grid-cont .grid-item .post-data-cont-top .post-like-cont i {
+  color: #ece9e2;
+  font-size: 32px;
+}
+.feed-grid-section .feed-grid-cont .grid-item .post-data-cont-bottom {
+  flex-direction: column;
+  justify-content: center;
+  bottom: 0;
+  right: 0;
+  color: #ece9e2;
+}
+.feed-grid-section .feed-grid-cont .grid-item .post-data-cont-bottom i {
+  font-size: 32px;
+}
+.feed-grid-section .feed-grid-cont .grid-item .post-data-cont-bottom .post-location {
+  font-size: 30px;
+  text-transform: capitalize;
+  margin: 0;
+  line-height: 28px;
+}
+.feed-grid-section .feed-grid-cont .grid-item .post-data-cont-bottom .view-more {
+  font-size: 20px;
+  text-transform: capitalize;
+}
+.feed-grid-section .feed-grid-cont .grid-item .post-hover {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  background: linear-gradient(0deg, rgba(57, 54, 51, 0.95) 10%, rgba(57, 54, 51, 0.25) 95%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.feed-grid-section .feed-grid-cont .grid-item .post-img {
+  width: 100%;
+}
+
+.page-disable {
+  overflow: hidden !important;
+  height: 100vh !important;
+}
+
+.active-post-modal {
+  transform: translateX(0) !important;
+  visibility: visible !important;
+  transition: transform 0.25s ease-in-out, visibility 0.25s ease-in-out !important;
+}
+
+.post-modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 25;
+  background: rgb(57, 54, 51);
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: transform 0.25s ease-in-out, visibility 0.25s ease-in-out;
+  transform: translateX(100vw);
+}
+.post-modal .exit-modal {
+  width: 100%;
+  height: 45px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  top: 0;
+  right: 0;
+  z-index: 75;
+}
+.post-modal .exit-modal .exit-modal-icon {
+  font-size: 24px;
+  color: #ece9e2;
+  -webkit-text-stroke: 1px #ece9e2;
+  cursor: pointer;
+}
+.post-modal .post-modal-cont::-webkit-scrollbar {
+  display: none;
+}
+.post-modal .post-modal-cont {
+  position: relative;
+  top: 45px;
+  width: 100%;
+  min-height: calc(100vh - 50px);
+  height: auto;
+  background: #ece9e2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+}
+.post-modal .post-modal-cont .img-cont {
+  width: 100%;
+  background: #393633;
+  border-bottom: solid 2px #393633;
+  overflow: hidden;
+  position: relative;
+}
+.post-modal .post-modal-cont .img-cont img {
+  width: 100%;
+  max-height: 42vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.post-modal .post-modal-cont .post-modal-content-cont {
+  width: 100%;
+  min-height: 57.5vh;
+  flex: 1;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  flex-direction: column;
+}
+.post-modal .post-modal-cont .post-modal-content-cont .post-user-cont,
+.post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont,
+.post-modal .post-modal-cont .post-modal-content-cont .post-add-comment-cont {
+  width: 100%;
+}
+.post-modal .post-modal-cont .post-modal-content-cont .post-caption-cont {
+  width: 100%;
+  background: #ece9e2;
+  border-bottom: solid 2px #393633;
+  padding: 10px 20px;
+}
+.post-modal .post-modal-cont .post-modal-content-cont .post-caption-cont p {
+  font-family: "PP Neue Montreal Regular";
+  font-size: 16px;
+  margin: 0;
+}
+.post-modal .post-modal-cont .post-modal-content-cont .post-user-cont {
+  height: 90px;
+  max-height: 90px;
+  background: #ece9e2;
+  border-bottom: solid 2px #393633;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  position: relative;
+  padding: 10px 20px;
+  gap: 10px;
+}
+.post-modal .post-modal-cont .post-modal-content-cont .post-user-cont .post-user-img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: solid 2px #393633;
+  display: inline-block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0;
+}
+.post-modal .post-modal-cont .post-modal-content-cont .post-user-cont .post-user-details {
+  margin-left: 0;
+  position: relative;
+  max-width: 60%;
+  display: inline-block;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-shrink: 1;
+  font-size: 16px;
+}
+.post-modal .post-modal-cont .post-modal-content-cont .post-user-cont .post-user-details .post-user-name {
+  font-weight: 800;
+  margin: 0;
+  display: block;
+  font-family: "PP Neue Montreal Bold";
+  font-size: 20px;
+}
+.post-modal .post-modal-cont .post-modal-content-cont .post-user-cont .post-user-details .post-location {
+  text-align: left;
+  margin: 0;
+  display: block;
+  font-family: "PP Neue Montreal Regular";
+}
+.post-modal .post-modal-cont .post-modal-content-cont .post-user-cont .post-interactions-cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  position: relative;
+  margin-right: 0;
+  gap: 10px;
+}
+.post-modal .post-modal-cont .post-modal-content-cont .post-user-cont .post-interactions-cont i {
+  font-size: 34px;
+  line-height: 34px;
+  padding: 3px;
+}
+.post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont {
+  width: 100%;
+  padding-bottom: 120px;
+  flex: 1;
+  background: #ece9e2;
+  font-family: "PP Neue Montreal Regular";
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont .new-comment:last-child {
+  -webkit-animation: new-comment-highlight 3.25s ease forwards;
+          animation: new-comment-highlight 3.25s ease forwards;
+  bottom: 0;
+}
+@-webkit-keyframes new-comment-highlight {
+  0% {
+    background: rgba(57, 54, 51, 0.15);
+  }
+  50% {
+    background: rgba(57, 54, 51, 0.15);
+  }
+  100% {
+    background: rgba(57, 54, 51, 0);
+  }
+}
+@keyframes new-comment-highlight {
+  0% {
+    background: rgba(57, 54, 51, 0.15);
+  }
+  50% {
+    background: rgba(57, 54, 51, 0.15);
+  }
+  100% {
+    background: rgba(57, 54, 51, 0);
+  }
+}
+.post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont .comment {
+  width: 100%;
+  display: flex;
+  height: auto;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 10px 20px;
+  gap: 10px;
+  font-family: "PP Neue Montreal Regular";
+  min-height: 50px;
+}
+.post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont .comment .comment-user-img {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  border: solid 2px #393633;
+  display: inline-block;
+  margin: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont .comment .comment-content {
+  width: 100%;
+  flex: 1;
+  height: auto;
+}
+.post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont .comment .comment-content p {
+  margin: 10px auto 0;
+  font-size: 16px;
+}
+.post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont .comment .comment-content p .comment-user-name {
+  font-family: "PP Neue Montreal Bold";
+  margin-right: 5px;
+}
+.post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont .comment .comment-content .at-tag {
+  color: #5b7053;
+  font-family: "PP Neue Montreal Bold";
+}
+.post-modal .post-modal-cont .post-modal-content-cont .post-add-comment-cont {
+  min-height: 75px;
+  background: #ece9e2;
+  border-top: solid 2px #393633;
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 10px 20px;
+  gap: 10px;
+  font-family: "PP Neue Montreal Regular";
+}
+.post-modal .post-modal-cont .post-modal-content-cont .post-add-comment-cont .current-user-img {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  border: solid 2px #393633;
+  display: inline-block;
+  margin: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.post-modal .post-modal-cont .post-modal-content-cont .post-add-comment-cont .not-logged-in {
+  opacity: 0.5 !important;
+  pointer-events: none;
+}
+.post-modal .post-modal-cont .post-modal-content-cont .post-add-comment-cont .comment-input {
+  min-height: 20px;
+  height: 100%;
+  margin-left: 0;
+  position: relative;
+  flex: 1;
+  outline: 0;
+  border: 0;
+  background: none;
+  height: 48px;
+  padding: 3px 5px;
+  color: #393633;
+  resize: none;
+  font-size: 18px;
+}
+.post-modal .post-modal-cont .post-modal-content-cont .post-add-comment-cont .post-new-comment {
+  font-size: 34px;
+  line-height: 34px;
+  padding: 3px;
+}
+
+@media screen and (min-width: 768px) {
+  .feed-grid-section {
+    width: 100%;
+    background: #ece9e2;
+    padding: 40px 20px;
+  }
+  .feed-grid-section .feed-grid-cont {
+    width: 92%;
+    margin: auto;
+    -moz-column-count: 2;
+         column-count: 2;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+  }
+  .active-post-modal {
+    opacity: 1 !important;
+    transition: opacity 0.25s ease-in-out 0s !important;
+  }
+  .post-modal {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 25;
+    background: rgba(57, 54, 51, 0.65);
+    -webkit-backdrop-filter: blur(1px);
+            backdrop-filter: blur(1px);
+    visibility: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: opacity 2.25s ease-in-out 0s;
+    opacity: 0;
+  }
+  .post-modal .exit-modal {
+    width: 100%;
+    height: 75px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 0;
+    right: 0px;
+    z-index: 75;
+  }
+  .post-modal .exit-modal .exit-modal-icon {
+    font-size: 24px;
+    color: #ece9e2;
+    -webkit-text-stroke: 1px #ece9e2;
+    text-shadow: 0px 0px 8px rgba(23, 23, 23, 0.35);
+  }
+  .post-modal .post-modal-cont::-webkit-scrollbar {
+    display: none;
+  }
+  .post-modal .post-modal-cont {
+    position: relative;
+    top: 25px;
+    width: 96%;
+    min-height: calc(100vh - 100px);
+    max-height: calc(100vh - 100px);
+    height: calc(100vh - 90px);
+    border: solid 2px #393633;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    box-shadow: 0px 0px 8px 0px rgba(23, 23, 23, 0.35);
+  }
+  .post-modal .post-modal-cont .img-cont {
+    height: 100%;
+    width: 55%;
+    background: #393633;
+    border-right: none;
+    border-right: solid 2px #393633;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+  .post-modal .post-modal-cont .img-cont img {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont {
+    width: 45%;
+    height: 100%;
+    top: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    flex-direction: column;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-user-cont,
+.post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont,
+.post-modal .post-modal-cont .post-modal-content-cont .post-add-comment-cont {
+    width: 100%;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-caption-cont {
+    width: 100%;
+    background: #ece9e2;
+    border-bottom: solid 2px #393633;
+    padding: 25px 20px;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-caption-cont p {
+    font-family: "PP Neue Montreal Regular";
+    font-size: 16px;
+    margin: 0;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-user-cont {
+    height: 100px;
+    min-height: 100px;
+    max-height: 100px;
+    border-bottom: solid 2px #393633;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    position: relative;
+    padding: 10px 20px;
+    gap: 10px;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-user-cont .post-user-img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: solid 2px #393633;
+    display: inline-block;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin: 0;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-user-cont .post-user-details {
+    margin-left: 0;
+    position: relative;
+    max-width: 60%;
+    display: inline-block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-shrink: 1;
+    font-size: 16px;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-user-cont .post-user-details .post-user-name {
+    font-weight: 800;
+    margin: 0;
+    display: block;
+    font-family: "PP Neue Montreal Bold";
+    font-size: 20px;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-user-cont .post-user-details .post-location {
+    text-align: left;
+    margin: 0;
+    display: block;
+    font-family: "PP Neue Montreal Regular";
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-user-cont .post-interactions-cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    position: relative;
+    margin-right: 0;
+    gap: 10px;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-user-cont .post-interactions-cont i {
+    font-size: 34px;
+    line-height: 34px;
+    padding: 3px;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont {
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    flex: 1;
+    background: #ece9e2;
+    font-family: "PP Neue Montreal Regular";
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont .new-comment:last-child {
+    -webkit-animation: new-comment-highlight 3.25s ease;
+            animation: new-comment-highlight 3.25s ease;
+    bottom: 0;
+  }
+  @-webkit-keyframes new-comment-highlight {
+    0% {
+      background: rgba(57, 54, 51, 0.15);
+    }
+    80% {
+      background: rgba(57, 54, 51, 0.15);
+    }
+    100% {
+      background: rgba(57, 54, 51, 0);
+    }
+  }
+  @keyframes new-comment-highlight {
+    0% {
+      background: rgba(57, 54, 51, 0.15);
+    }
+    80% {
+      background: rgba(57, 54, 51, 0.15);
+    }
+    100% {
+      background: rgba(57, 54, 51, 0);
+    }
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont .comment:hover,
+.post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont .new-comment:hover {
+    background: rgba(57, 54, 51, 0.15) !important;
+    transition: background 0.15s ease;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont .comment {
+    width: 100%;
+    background: #ece9e2;
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 12px 20px;
+    gap: 10px;
+    font-family: "PP Neue Montreal Regular";
+    min-height: 50px;
+    transition: background 0.15s ease;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont .comment .comment-user-img {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    border: solid 2px #393633;
+    display: inline-block;
+    margin: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont .comment .comment-content {
+    width: 100%;
+    flex: 1;
+    height: auto;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont .comment .comment-content p {
+    margin: 10px auto 0px;
+    font-size: 16px;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont .comment .comment-content p .comment-user-name {
+    font-family: "PP Neue Montreal Bold";
+    margin-right: 5px;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-add-comment-cont {
+    min-height: 80px;
+    background: #ece9e2;
+    width: 100%;
+    border-top: solid 2px #393633;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0px;
+    right: 100%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 25px 20px;
+    gap: 10px;
+    font-family: "PP Neue Montreal Regular";
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-add-comment-cont .current-user-img {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    border: solid 2px #393633;
+    display: inline-block;
+    margin: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-add-comment-cont .comment-input {
+    min-height: 20px;
+    height: 100%;
+    margin-left: 0;
+    position: relative;
+    flex: 1;
+    outline: 0;
+    border: none;
+    background: none;
+    height: 48px;
+    padding: 3px 5px;
+    color: #393633;
+    resize: none;
+    font-size: 18px;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-add-comment-cont .post-new-comment {
+    font-size: 34px;
+    line-height: 34px;
+    padding: 3px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .feed-grid-section {
+    width: 100%;
+    background: #ece9e2;
+    padding: 50px 20px;
+  }
+  .feed-grid-section .feed-grid-cont {
+    max-width: 1420px;
+    margin: auto;
+    -moz-column-count: 3;
+         column-count: 3;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+  }
+  .active-post-modal {
+    opacity: 1 !important;
+    transition: opacity 0.25s ease-in-out 0s !important;
+  }
+  .post-modal {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 25;
+    background: rgba(57, 54, 51, 0.65);
+    -webkit-backdrop-filter: blur(1px);
+            backdrop-filter: blur(1px);
+    visibility: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: opacity 2.25s ease-in-out 0s;
+    opacity: 0;
+  }
+  .post-modal .exit-modal {
+    width: 100%;
+    height: 75px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 0;
+    right: 0px;
+    z-index: 75;
+  }
+  .post-modal .exit-modal .exit-modal-icon {
+    font-size: 24px;
+    color: #ece9e2;
+    -webkit-text-stroke: 1px #ece9e2;
+    text-shadow: 0px 0px 8px rgba(23, 23, 23, 0.35);
+    margin-right: 25px;
+  }
+  .post-modal .post-modal-cont::-webkit-scrollbar {
+    display: none;
+  }
+  .post-modal .post-modal-cont {
+    position: relative;
+    top: 0px;
+    width: 80%;
+    max-width: 1200px;
+    min-height: calc(100vh - 80px);
+    max-height: calc(100vh - 80px);
+    height: calc(100vh - 80px);
+    border: solid 2px #393633;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    box-shadow: 0px 0px 8px 0px rgba(23, 23, 23, 0.35);
+  }
+  .post-modal .post-modal-cont .img-cont {
+    height: 100%;
+    width: 55%;
+    background: #393633;
+    border-right: none;
+    border-right: solid 2px #393633;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+  .post-modal .post-modal-cont .img-cont img {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont {
+    width: 45%;
+    height: 100%;
+    top: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    flex-direction: column;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-user-cont,
+.post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont,
+.post-modal .post-modal-cont .post-modal-content-cont .post-add-comment-cont {
+    width: 100%;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-caption-cont {
+    width: 100%;
+    background: #ece9e2;
+    border-bottom: solid 2px #393633;
+    padding: 25px 20px;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-caption-cont p {
+    font-family: "PP Neue Montreal Regular";
+    font-size: 16px;
+    margin: 0;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-user-cont {
+    height: 100px;
+    min-height: 100px;
+    max-height: 100px;
+    border-bottom: solid 2px #393633;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    position: relative;
+    padding: 10px 20px;
+    gap: 10px;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-user-cont .post-user-img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: solid 2px #393633;
+    display: inline-block;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin: 0;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-user-cont .post-user-details {
+    margin-left: 0;
+    position: relative;
+    max-width: 60%;
+    display: inline-block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-shrink: 1;
+    font-size: 16px;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-user-cont .post-user-details .post-user-name {
+    font-weight: 800;
+    margin: 0;
+    display: block;
+    font-family: "PP Neue Montreal Bold";
+    font-size: 20px;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-user-cont .post-user-details .post-location {
+    text-align: left;
+    margin: 0;
+    display: block;
+    font-family: "PP Neue Montreal Regular";
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-user-cont .post-interactions-cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    position: relative;
+    margin-right: 0;
+    gap: 10px;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-user-cont .post-interactions-cont i {
+    font-size: 34px;
+    line-height: 34px;
+    padding: 3px;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont {
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    flex: 1;
+    background: #ece9e2;
+    font-family: "PP Neue Montreal Regular";
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont .new-comment:last-child {
+    -webkit-animation: new-comment-highlight 3.25s ease;
+            animation: new-comment-highlight 3.25s ease;
+    bottom: 0;
+  }
+  @-webkit-keyframes new-comment-highlight {
+    0% {
+      background: rgba(57, 54, 51, 0.15);
+    }
+    80% {
+      background: rgba(57, 54, 51, 0.15);
+    }
+    100% {
+      background: rgba(57, 54, 51, 0);
+    }
+  }
+  @keyframes new-comment-highlight {
+    0% {
+      background: rgba(57, 54, 51, 0.15);
+    }
+    80% {
+      background: rgba(57, 54, 51, 0.15);
+    }
+    100% {
+      background: rgba(57, 54, 51, 0);
+    }
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont .comment:hover,
+.post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont .new-comment:hover {
+    background: rgba(57, 54, 51, 0.15) !important;
+    transition: background 0.15s ease;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont .comment {
+    width: 100%;
+    background: #ece9e2;
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 12px 20px;
+    gap: 10px;
+    font-family: "PP Neue Montreal Regular";
+    min-height: 50px;
+    transition: background 0.15s ease;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont .comment .comment-user-img {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    border: solid 2px #393633;
+    display: inline-block;
+    margin: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont .comment .comment-content {
+    width: 100%;
+    flex: 1;
+    height: auto;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont .comment .comment-content p {
+    margin: 10px auto 0px;
+    font-size: 16px;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-comments-cont .comment .comment-content p .comment-user-name {
+    font-family: "PP Neue Montreal Bold";
+    margin-right: 5px;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-add-comment-cont {
+    min-height: 80px;
+    background: #ece9e2;
+    width: 100%;
+    border-top: solid 2px #393633;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0px;
+    right: 100%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 25px 20px;
+    gap: 10px;
+    font-family: "PP Neue Montreal Regular";
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-add-comment-cont .current-user-img {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    border: solid 2px #393633;
+    display: inline-block;
+    margin: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-add-comment-cont .comment-input {
+    min-height: 20px;
+    height: 100%;
+    margin-left: 0;
+    position: relative;
+    flex: 1;
+    outline: 0;
+    border: none;
+    background: none;
+    height: 48px;
+    padding: 3px 5px;
+    color: #393633;
+    resize: none;
+    font-size: 18px;
+  }
+  .post-modal .post-modal-cont .post-modal-content-cont .post-add-comment-cont .post-new-comment {
+    font-size: 34px;
+    line-height: 34px;
+    padding: 3px;
+  }
+}
+footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #524f42;
+  width: 100%;
+  color: #ece9e2;
+}
+
+#footer-container {
+  width: 80%;
+  max-width: 1440px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 0.5fr 0.5fr;
+  margin-top: 50px;
+}
+
+.footer-section {
+  width: 100%;
+  grid-column: span 4;
+  margin-bottom: 20px;
+}
+.footer-section h2 {
+  font-size: 1.25em;
+}
+.footer-section p {
+  font-size: 0.75em;
+  margin-bottom: 0.2rem;
+}
+
+#subscribe-container {
+  display: grid;
+  grid-template-rows: 1fr;
+  width: 100%;
+  grid-column: span 4;
+}
+
+#subscribe-section {
+  width: 100%;
+}
+#subscribe-section h2 {
+  font-size: 1em;
+}
+#subscribe-section #input-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#subscribe-section #input-div input {
+  width: 70%;
+  height: 4vh;
+  margin-right: 1vw;
+}
+#subscribe-section #input-div button {
+  border: 0;
+  background-color: #8c946f;
+  color: white;
+  font-family: "PP Neue Montreal Bold";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  width: 43%;
+  margin-top: 10px;
+  padding: 10px;
+}
+#subscribe-section #input-div button:hover {
+  background-color: #5b7053;
+}
+
+#icon-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+#icon-section i {
+  font-size: 2em;
+  margin: 0.5em;
+}
+
+#copyright-banner {
+  grid-column: span 4;
+  background: #393633;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  #footer-container {
+    width: 70%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr 0.5fr 0.25fr;
+    grid-gap: 0.5em;
+  }
+  .footer-section {
+    grid-column: span 1;
+  }
+  #subscribe-container {
+    grid-column: span 4;
+  }
+  #subscribe-section button {
+    width: 23%;
+  }
+  #icon-section {
+    grid-column: span 4;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  #footer-container {
+    grid-template-columns: 1fr 1fr 1fr 3fr;
+    grid-template-rows: 1fr 0.5fr;
+  }
+  .footer-section {
+    grid-column: span 1;
+  }
+  #subscribe-container {
+    width: 100%;
+    grid-column: span 1;
+  }
+  #subscribe-section button {
+    width: 21%;
+  }
+  #icon-section {
+    grid-column: span 4;
+  }
+}
+#login-body {
+  background-color: #ece9e2;
+}
+#login-body #login-img {
+  width: 100%;
+  height: 174px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#login-body h1 {
+  font-family: "PP Radio Grotesk Bold";
+  color: #393633;
+  text-align: center;
+  font-size: 72px;
+  margin-top: -13px;
+  margin-bottom: 50px;
+}
+#login-body h2 {
+  margin-top: 38px;
+  margin-bottom: 0;
+  font-size: 31px;
+  font-family: "PP Radio Grotesk Bold";
+  color: #393633;
+  text-align: center;
+}
+#login-body #tagline {
+  display: none;
+}
+#login-body #login-form {
+  text-align: center;
+  padding: 0 50px;
+}
+#login-body #login-form input {
+  width: 100%;
+  padding: 10px;
+  font-family: "PP Neue Montreal Light";
+  font-size: 24px;
+  border-radius: 0;
+  border: 1px solid #393633;
+  color: #524f42;
+  background-color: #ece9e2;
+  margin-bottom: 16px;
+}
+#login-body #login-form #validation {
+  font-family: "PP Neue Montreal Light";
+}
+#login-body #login-form #login-button-login-page {
+  border: 0;
+  background-color: #8c946f;
+  color: white;
+  font-family: "PP Neue Montreal Bold";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  width: 100%;
+  font-size: 24px;
+}
+#login-body #login-form #login-button-login-page #login-button-login-page:hover {
+  background-color: #524f42;
+}
+#login-body #login-form hr {
+  margin: 25px 0;
+  border: 1px solid black;
+}
+#login-body #login-form #signup-button-login-page {
+  border: 0;
+  background-color: #5b7053;
+  color: white;
+  font-family: "PP Neue Montreal Bold";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  width: 100%;
+  font-size: 24px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+#login-body #login-form #signup-button-login-page #signup-button-login-page:hover {
+  background-color: #524f42;
+}
+#login-body #login-form a {
+  text-decoration: none;
+}
+#login-body #login-form #guest-link {
+  color: #5b7053;
+  font-family: "PP Neue Montreal Light";
+  font-size: 19px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+#login-body #login-form #guest-link #guest-link:hover {
+  color: #393633;
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 600px) {
+  #login-body #login-img {
+    height: 220px;
+  }
+  #login-body #login-form {
+    padding: 0 80px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #login-body #login-img {
+    height: 338px;
+  }
+  #login-body #login-form {
+    padding: 0 130px;
+  }
+  #login-body #login-form #validation {
+    font-size: 18px;
+  }
+  #login-body h1 {
+    margin-bottom: 0;
+  }
+  #login-body #tagline {
+    display: block;
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: "PP Neue Montreal Light";
+    font-size: 20px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #login-body .login-container {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100vh;
+  }
+  #login-body .login-container #img-container {
+    width: 48%;
+  }
+  #login-body .login-container #img-container #login-img {
+    width: 100%;
+    height: 100%;
+    -o-object-position: 35%;
+       object-position: 35%;
+  }
+  #login-body .login-container .login-content-container {
+    padding: 0 50px;
+    width: 52%;
+    margin: 100px 0;
+  }
+  #login-body .login-container .login-content-container h2 {
+    text-align: left;
+  }
+  #login-body .login-container .login-content-container h1 {
+    font-size: 80px;
+    text-align: left;
+  }
+  #login-body .login-container .login-content-container #tagline {
+    text-align: left;
+  }
+  #login-body .login-container .login-content-container #login-form {
+    padding: 0 100px 0 0;
+  }
+  #login-body .login-container .login-content-container #login-form #validation {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  #login-body .login-container .login-content-container {
+    padding: 0 85px;
+  }
+  #login-body .login-container .login-content-container h1 {
+    font-size: 120px;
+  }
+  #login-body .login-container .login-content-container h2 {
+    font-size: 40px;
+  }
+  #login-body .login-container .login-content-container #login-form {
+    padding: 0 200px 0 0;
+  }
+  #login-body .login-container .login-content-container #login-form #guest-link {
+    margin-top: 10px;
+  }
+}
+#signup-body {
+  background-color: #ece9e2;
+}
+#signup-body #login-img {
+  width: 100%;
+  height: 174px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#signup-body h2 {
+  margin-top: 38px;
+  margin-bottom: 0;
+  font-size: 31px;
+  font-family: "PP Radio Grotesk Bold";
+  color: #393633;
+  text-align: center;
+}
+#signup-body h1 {
+  font-size: 72px;
+  margin-top: -13px;
+  margin-bottom: 20px;
+  font-family: "PP Radio Grotesk Bold";
+  color: #393633;
+  text-align: center;
+}
+#signup-body #tagline {
+  display: none;
+}
+#signup-body #signup-form {
+  text-align: center;
+  padding: 0 50px;
+}
+#signup-body #signup-form input {
+  width: 100%;
+  padding: 10px 20px;
+  font-family: "PP Neue Montreal Light";
+  font-size: 26px;
+  border-radius: 0;
+  border: 1px solid #393633;
+  color: #524f42;
+  background-color: #ece9e2;
+  margin-bottom: 16px;
+}
+#signup-body #signup-form #login-button-signup-page {
+  border: 0;
+  background-color: #8c946f;
+  color: white;
+  font-family: "PP Neue Montreal Bold";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  width: 100%;
+  font-size: 24px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+#signup-body #signup-form #login-button-signup-page #login-button-signup-page:hover {
+  background-color: #524f42;
+}
+#signup-body #signup-form hr {
+  margin: 20px 0;
+  border: 1px solid black;
+}
+#signup-body #signup-form #signup-button-signup-page {
+  border: 0;
+  background-color: #5b7053;
+  color: white;
+  font-family: "PP Neue Montreal Bold";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  width: 100%;
+  font-size: 24px;
+}
+#signup-body #signup-form #signup-button-signup-page #signup-button-signup-page:hover {
+  background-color: #524f42;
+}
+#signup-body #signup-form a {
+  text-decoration: none;
+}
+#signup-body #signup-form #guest-link {
+  color: #5b7053;
+  font-family: "PP Neue Montreal Light";
+  font-size: 19px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+#signup-body #signup-form #guest-link #guest-link:hover {
+  color: #393633;
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 600px) {
+  #signup-body #login-img {
+    height: 270px;
+  }
+  #signup-body #signup-form {
+    padding: 0 80px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #signup-body #login-img {
+    height: 338px;
+  }
+  #signup-body #signup-form {
+    padding: 0 130px;
+  }
+  #signup-body h1 {
+    margin-bottom: 0;
+  }
+  #signup-body #tagline {
+    display: block;
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: "PP Neue Montreal Light";
+    font-size: 20px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #signup-body .signup-container {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100vh;
+  }
+  #signup-body .signup-container #img-container {
+    width: 48%;
+  }
+  #signup-body .signup-container #img-container #login-img {
+    width: 100%;
+    height: 100%;
+    -o-object-position: 35%;
+       object-position: 35%;
+  }
+  #signup-body .signup-container .signup-content-container {
+    padding: 0 50px;
+    width: 52%;
+    margin: 60px 0 100px;
+  }
+  #signup-body .signup-container .signup-content-container h2 {
+    text-align: left;
+  }
+  #signup-body .signup-container .signup-content-container h1 {
+    font-size: 80px;
+    text-align: left;
+  }
+  #signup-body .signup-container .signup-content-container #tagline {
+    text-align: left;
+  }
+  #signup-body .signup-container .signup-content-container #signup-form {
+    padding: 0 100px 0 0;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  #signup-body .signup-container .signup-content-container {
+    padding: 0 85px;
+    margin: 100px 0;
+  }
+  #signup-body .signup-container .signup-content-container h1 {
+    font-size: 120px;
+  }
+  #signup-body .signup-container .signup-content-container h2 {
+    font-size: 40px;
+  }
+  #signup-body .signup-container .signup-content-container #signup-form {
+    padding: 0 200px 0 0;
+  }
+  #signup-body .signup-container .signup-content-container #signup-form #guest-link {
+    margin-top: 10px;
+  }
+}
+@-webkit-keyframes pop {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes pop {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.create-post-modal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: 25;
+  background: rgba(57, 54, 51, 0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.create-post-modal .create-exit-modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 5px;
+}
+.create-post-modal .create-exit-modal .exit-modal-icon {
+  font-size: 30px;
+  color: #ece9e2;
+  transition: 0.3s ease;
+}
+.create-post-modal .create-exit-modal .exit-modal-icon .exit-modal-icon:hover {
+  font-size: 30px;
+  color: #8c946f;
+}
+.create-post-modal .create-post-modal-cont {
+  -webkit-animation: pop 0.3s ease forwards;
+          animation: pop 0.3s ease forwards;
+  width: 90%;
+  padding: 30px;
+  background: #ece9e2;
+  border: 2px solid #393633;
+}
+.create-post-modal #add-post-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.create-post-modal #add-post-form input {
+  width: 90%;
+  height: 3rem;
+  font-family: "PP Neue Montreal Regular", sans-serif;
+  margin-bottom: 1rem;
+  border: 1px solid black;
+}
+.create-post-modal #add-post-form label {
+  font-size: 1.25rem;
+  font-family: "PP Neue Montreal Bold", sans-serif;
+  width: 90%;
+}
+.create-post-modal #add-post-form button {
+  border: 0;
+  background-color: #8c946f;
+  color: white;
+  font-family: "PP Neue Montreal Bold";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  padding: 15px 20px;
+  margin-top: 2rem;
+}
+.create-post-modal #add-post-form button:hover {
+  background: #5b7053;
+}
+
+.parsley-errors-list {
+  margin: 0;
+  padding: 0;
+}
+
+.parsley-required {
+  color: rgb(177, 0, 0);
+  list-style: none;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 768px) {
+  .create-post-modal-cont {
+    max-width: 50%;
+    background: red;
+  }
+  #add-post-form input {
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .create-post-modal-cont {
+    max-width: 30%;
+    background: red;
+  }
+  #add-post-form input {
+    max-width: 100%;
+  }
+}
+@keyframes pop {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.modal-body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+#image-preview {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#image-preview img {
+  width: 100%;
+  max-height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top: 2px solid #393633;
+  border-bottom: 2px solid #393633;
+  margin-bottom: 20px;
+}
+
+.modal-header {
+  padding: 20px;
+  border: none;
+  font-family: "PP Neue Montreal Bold", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-header .btn-close {
+  position: absolute;
+  right: 25px;
+}
+
+.modal-content {
+  background: #ece9e2;
+  border: 2px solid #393633;
+  -webkit-animation: pop 0.3s ease forwards;
+          animation: pop 0.3s ease forwards;
+  border-radius: 0;
+}
+
+form {
+  width: 101%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+form label {
+  width: 80%;
+  font-family: "PP Neue Montreal Bold";
+}
+form input {
+  width: 80%;
+  margin-bottom: 20px;
+  padding: 5px 15px;
+  font-family: "PP Neue Montreal Regular";
+}
+
+.modal-footer {
+  padding: 0;
+  border: 0;
+}
+.modal-footer #updatePost {
+  background: #393633;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  font-family: "PP Radio Grotesk Bold", sans-serif;
+  font-size: 20px;
+}
+.modal-footer #updatePost:hover {
+  background: #5b7053;
+  color: #ece9e2;
+}
+
+body {
+  background: #524f42;
+  width: 100vw;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: "PP Neue Montreal Bold";
+  font-weight: 800;
+}

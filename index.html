@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CDNs -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Summative</title>
+</head>
+
+<body>
+    <nav class="" id="">
+        <div class="main-nav">
+            <div class="main-nav-cont">
+                <a href="#" class="logo">Wētāverse</a>
+                <div id="user-details">
+                    <!-- <a href="login.html">
+                            <button id="nav-login-button">Login/Signup</button>
+                        </a> -->
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="secondary-nav" id="secondary-nav">
+            <div class="secondary-nav-cont">
+                <div class="menu-btn" id="menu-btn">
+                    <i class="bi bi-list" id="nav-open"></i>
+                    <i class="bi bi-x" id="nav-close"></i>
+                </div>
+                <div class="nav-list" id="nav-list">
+                    <a href="">Contact</a>
+                    <a href="">About</a>
+                    <a href="">Protection</a>
+                </div>
+                <div class="nav-search">
+                    <input type="text" name="" id="" placeholder="Search the Wētāverse...">
+                    <i class="bi bi-search"></i>
+                </div>
+            </div>
+            <div class="nav-list-mobile" id="nav-list-mobile">
+                <a href="">Contact</a>
+                <a href="">About</a>
+                <a href="">Protection</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="feed-grid-section">
+        <div class="add-post-cont" id="add-post-cont">
+            <div class="add-post-btn" id="add-post-btn">
+                <i class="bi bi-plus-square-fill"></i>
+                <p>Create a post</p>
+            </div>
+        </div>
+        <div class="post-modal" id="post-modal">
+            <div class="exit-modal" id="exit-modal">
+                <i class="bi bi-x-lg  exit-modal-icon"></i>
+            </div>
+            <div class="post-modal-cont" id="post-modal-cont">
+                <div class="img-cont">
+                    <img src="https://nzbirdsonline.org.nz/sites/all/files/1200543Tui%20x2800.JPG">
+                </div>
+                <div class="post-modal-content-cont">
+                    <div class="post-user-cont">
+                        <div class="post-user-img"></div>
+                        <div class="post-user-details">
+                            <h5 class="post-user-name">@jaruuude</h5>
+                            <p class="post-location">Newtown, Wellington</p>
+                        </div>
+                        <div class="post-interactions-cont">
+                            <i class="bi bi-pencil-square"></i>
+                            <i class="bi bi-trash3"></i>
+                            <i class="bi bi-heart"></i>
+                        </div>
+                    </div>
+                    <div class="post-comments-cont">
+                        <div class="comment">
+                            <div class="comment-user-img"></div>
+                            <div class="comment-content">
+                                <p><span class="comment-user-name">@hollyholly</span>This is an example of a comment</p>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <div class="comment-user-img"></div>
+                            <div class="comment-content">
+                                <p><span class="comment-user-name">@hollyholly</span>This is an example of a comment but
+                                    slightly longer</p>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <div class="comment-user-img"></div>
+                            <div class="comment-content">
+                                <p><span class="comment-user-name">@hollyholly</span>This is an example of a comment</p>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <div class="comment-user-img"></div>
+                            <div class="comment-content">
+                                <p><span class="comment-user-name">@hollyholly</span>This is an example of a comment but
+                                    even longer than the other long one just to show off how we can deal with long
+                                    comments like this one</p>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <div class="comment-user-img"></div>
+                            <div class="comment-content">
+                                <p><span class="comment-user-name">@hollyholly</span>This is an example of a comment but
+                                    even longer than the other long one just to show off how we can deal with long
+                                    comments like this one and the one before this one. also using this to extend the
+                                    post a bit more</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-add-comment-cont">
+                        <div class="current-user-img">
+                        </div>
+                        <input type="text" placeholder="Leave a comment..." class="comment-input">
+                        <i class="bi bi-send  post-new-comment"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="feed-grid-cont" id="feed-grid-cont">
+            <div class="grid-item item-1"></div>
+            <div class="grid-item item-3"></div>
+            <div class="grid-item item-2"></div>
+            <div class="grid-item item-3"></div>
+            <div class="grid-item item-2"></div>
+            <div class="grid-item item-1"></div>
+            <div class="grid-item item-3"></div>
+            <div class="grid-item item-2"></div>
+        </div>
+    </section>
+    <!-- <div id="result"></div> -->
+
+    <!-- <button id="add-post-btn">Create a post</button> -->
+    <div class="create-post-modal">
+        <div class="create-exit-modal">
+            <i id="exit-modal-icon" class="bi bi-x-lg  exit-modal-icon"></i>
+        </div>
+        <div class="create-post-modal-cont">
+            <form id="add-post-form" action="javascript:void(0)" data-parsley-validate>
+                <label for="image-url-input">Enter an image URL</label>
+                <input id="image-url-input" name="image-url-input" type="text" required="">
+                <label for="title-input">Enter a title</label>
+                <input id="title-input" name="title-input" type="text" required="">
+                <label for="location-input">Enter a location</label>
+                <input id="location-input" name="location-input" type="text" required="">
+                <label for="caption-input">Enter a caption</label>
+                <input id="caption-input" name="image-url-input" type="text" required="">
+                <button id="render-post-btn" type="submit" value="validate">Create Post</button>
+            </form>
+        </div>
+    </div>
+    <!-- EDIT MODAL -->
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Post</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="image-preview"></div>
+                    <form id="productForm">
+                        <!-- <label for="productId">Enter Product Id:</label>
+            <input type="text" name="inputID" id="productId">
+            <br><br> -->
+
+                        <label for="postTitle">Edit title of the post</label>
+                        <input type="text" id="postTitle" name="postTitle">
+
+                        <label for="postLocation">Edit location of the post</label>
+                        <input type="text" id="postLocation" name="postLocation">
+
+                        <label for="postCaption">Edit caption of the post</label>
+                        <input type="text" id="postCaption" name="postCaption">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="updatePost" name="productButton" type="submit" class="btn btn-primary">Update
+                        Post</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div id="footer-container">
+            <div class="footer-section">
+                <h2>Contact</h2>
+                <p>Email Address</p>
+                <p>Phone Number</p>
+                <p>Postal Address</p>
+            </div>
+            <div class="footer-section">
+                <h2>About Us</h2>
+                <p>Members</p>
+                <p>Zero Invasive Predators</p>
+                <p>Our Goals</p>
+            </div>
+            <div class="footer-section">
+                <h2>Support Us</h2>
+                <p>Donations</p>
+                <p>Volunteer Opportunities</p>
+                <p>Bank Account</p>
+            </div>
+            <div id="subscribe-container">
+                <div id="subscribe-section">
+                    <h2>Subscribe To Our Mailing List</h2>
+                    <div id="input-div">
+                        <input type="text">
+                        <button>Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div id="icon-section">
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-twitter"></i>
+                <i class="bi bi-linkedin"></i>
+                <i class="bi bi-instagram"></i>
+            </div>
+        </div>
+        <div id="copyright-banner">Copyright 2022</div>
+    </footer>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- parsley -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"
+        integrity="sha512-eyHL1atYNycXNXZMDndxrDhNAegH2BDWt1TmkXJPoGf1WLlNYt08CSjkqF5lnCRmdm3IrkHid8s2jOUY4NIZVQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <!-- custom -->
+    <!-- <script src="js/login.js"></script>
+        <script src="js/signup.js"></script> -->
+    <script src="js/nav.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/parsley.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+#login-body {
+    background-color: $White;
+
+    #login-img {
+        width: 100%;
+        height: 174px;
+        object-fit: cover;
+    }
+
+    h1 {
+        font-family: 'PP Radio Grotesk Bold';
+        color: $Black;
+        text-align: center;
+        font-size: 72px;
+        margin-top: -13px;
+        margin-bottom: 50px;
+    }
+
+    h2 {
+        margin-top: 38px;
+        margin-bottom: 0;
+        font-size: 31px;
+        font-family: 'PP Radio Grotesk Bold';
+        color: $Black;
+        text-align: center;
+    }
+
+    #tagline {
+        display: none;
+    }
+
+    #login-form {
+        text-align: center;
+        padding: 0 50px;
+
+        input {
+            width: 100%;
+            padding: 10px;
+            font-family: 'PP Neue Montreal Light';
+            font-size: 24px;
+            border-radius: 0;
+            border: 1px solid $Black;
+            color: $Brown;
+            background-color: $White;
+            margin-bottom: 16px;
+        }
+
+        #validation {
+            font-family: 'PP Neue Montreal Light';
+        }
+
+        #login-button-login-page {
+            @include button-main;
+            width: 100%;
+            font-size: 24px;
+
+            #login-button-login-page:hover {
+                background-color: $Brown;
+            }
+        }
+
+        hr {
+            margin: 25px 0;
+            border: 1px solid black;
+        }
+
+        #signup-button-login-page {
+            @include button-second;
+            width: 100%;
+            font-size: 24px;
+            margin-bottom: 10px;
+            display: inline-block;
+
+            #signup-button-login-page:hover {
+                background-color: $Brown;
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #guest-link {
+            color: $PrimaryGreen;
+            font-family: 'PP Neue Montreal Light';
+            font-size: 19px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: .3s ease-in-out;
+
+            #guest-link:hover {
+                color: $Black;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #login-body {
+
+        #login-img {
+            height: 220px;
+        }
+
+        #login-form {
+            padding: 0 80px;
+        }
+    }
+}
+@media only screen and (min-width: 768px) {
+    #login-body {
+
+        #login-img {
+            height: 338px;
+        }
+
+        #login-form {
+            padding: 0 130px;
+
+            #validation {
+                font-size: 18px;
+            }
+        }
+
+        h1 {
+            margin-bottom: 0;
+        }
+
+        #tagline {
+            display: block;
+            text-align: center;
+            margin-bottom: 50px;
+            font-family: 'PP Neue Montreal Light';
+            font-size: 20px;
+        }
+    }
+}
+@media only screen and (min-width: 1024px) {
+    #login-body {
+
+        .login-container {
+            display: flex;
+            flex-direction: row-reverse;
+            height: 100vh;
+
+            #img-container {
+                width: 48%;
+
+                #login-img {
+                    width: 100%;
+                    height: 100%;
+                    object-position: 35%;
+                }
+            }
+
+            .login-content-container {
+                padding: 0 50px;
+                width: 52%;
+                margin: 100px 0;
+
+                h2 {
+                    text-align: left;
+                }
+
+                h1 {
+                    font-size: 80px;
+                    text-align: left;
+                }
+
+                #tagline {
+                    text-align: left;
+                }
+
+                #login-form {
+                    padding: 0 100px 0 0;
+
+                    #validation {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    #login-body {
+
+        .login-container {
+
+            .login-content-container {
+                padding: 0 85px;
+
+                h1 {
+                    font-size: 120px;
+                }
+
+                h2 {
+                    font-size: 40px;
+                }
+
+                #login-form {
+                    padding: 0 200px 0 0;
+                    
+                    #guest-link {
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

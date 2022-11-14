@@ -1,0 +1,101 @@
+@keyframes pop {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.modal-body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+#image-preview {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 100%;
+        // border: 5px solid $PrimaryGreen;
+        max-height: 150px;
+        object-fit: cover;
+        border-top: 2px solid $Black;
+        border-bottom: 2px solid $Black;
+        margin-bottom: 20px;
+    }
+}
+
+.modal-header {
+    padding: 20px;
+    border: none;
+    font-family: 'PP Neue Montreal Bold', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .btn-close {
+        position: absolute;
+        right: 25px;
+    }
+}
+
+.modal-content {
+    background: $background-color;
+    border: 2px solid $Black;
+    animation: pop .3s ease forwards;
+    border-radius: 0;
+}
+
+form {
+    width: 101%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+
+    label {
+        width: 80%;
+        font-family: 'PP Neue Montreal Bold';
+    }
+
+    input {
+        width: 80%;
+        margin-bottom: 20px;
+        padding: 5px 15px;
+        font-family: 'PP Neue Montreal Regular'
+    }
+}
+
+.modal-footer {
+    padding: 0;
+    // width: 100%;
+    border: 0;
+
+    #updatePost {
+        background: $Black;
+        border: 0;
+        border-radius: 0;
+        margin-bottom: 20px;
+        // width: 80vw;
+        // height: 6vh;
+        padding: 10px 15px;
+        font-family: 'PP Radio Grotesk Bold', sans-serif;
+        font-size: 20px;
+    }
+
+    #updatePost:hover {
+        background: $PrimaryGreen;
+        // border: 3px solid $Black;
+        color: $White;
+    }
+}

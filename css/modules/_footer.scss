@@ -1,0 +1,151 @@
+footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: $nav-secondary;
+    width: 100%;
+    color: $White;
+}
+
+#footer-container {
+    width: 80%;
+    max-width: 1440px;
+    // height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr .5fr .5fr;
+    // justify-items: center;
+    margin-top: 50px;
+}
+
+.footer-section {
+    width: 100%;
+    grid-column: span 4;
+    // width: 100%;
+    margin-bottom: 20px;
+
+    h2 {
+        font-size: 1.25em;
+    }
+
+    p {
+        font-size: .75em;
+        margin-bottom: .2rem;
+    }
+}
+
+#subscribe-container {
+    display: grid;
+    grid-template-rows: 1fr;
+    // background: black;
+    width: 100%;
+    grid-column: span 4;
+}
+
+#subscribe-section {
+    width: 100%;
+
+    h2 {
+        font-size: 1em;
+    }
+
+    #input-div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        input {
+            width: 70%;
+            height: 4vh;
+            margin-right: 1vw;
+        }
+
+        button {
+            @include button-main;
+            width: 43%;
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        button:hover {
+            background-color: $PrimaryGreen;
+        }
+    }
+}
+
+#icon-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    i {
+        font-size: 2em;
+        margin: .5em;
+    }
+}
+
+#copyright-banner {
+    grid-column: span 4;
+    background: $nav-primary;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+    #footer-container {
+        width: 70%;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr .5fr .5fr .25fr;
+        grid-gap: .5em;
+    }
+
+    .footer-section {
+        grid-column: span 1;
+    }
+
+    #subscribe-container {
+        grid-column: span 4;
+    }
+
+    #subscribe-section {
+
+        button {
+            width: 23%;
+        }
+    }
+
+    #icon-section {
+        grid-column: span 4;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    #footer-container {
+        // width: 70%;
+        grid-template-columns: 1fr 1fr 1fr 3fr;
+        grid-template-rows: 1fr .5fr;
+    }
+
+    .footer-section {
+        grid-column: span 1;
+    }
+
+    #subscribe-container {
+        width: 100%;
+        grid-column: span 1;
+    }
+
+    #subscribe-section {
+
+        button {
+            width: 21%;
+        }
+    }
+
+    #icon-section {
+        grid-column: span 4;
+    }
+}

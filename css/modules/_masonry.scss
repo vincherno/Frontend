@@ -1,0 +1,1354 @@
+.add-post-cont {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130px;
+    position: sticky;
+    z-index: 5;
+    top: 0;
+    bottom: 0;
+    background: $White;
+
+    #add-post-btn {
+        padding: 8px 16px;
+        color: $White;
+        background: $PrimaryGreen;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 8px;
+        margin-bottom: 10px;
+        cursor: pointer;
+
+        p {
+            @include CreatePost;
+            margin-bottom: 0;
+            font-size: 22px;
+            color: white;
+        }
+
+        i {
+            font-size: 26px;
+        }
+    }
+}
+
+.feed-grid-section {
+    width: 100%;
+    background: $White;
+    padding: 30px 20px;
+
+    .feed-grid-cont {
+        width: 100%;
+        margin: auto;
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+        column-width: 100%;
+        column-gap: 10px;
+        column-fill: auto;
+        column-rule: 100%;
+        break-inside: avoid;
+
+        .grid-item:hover {
+            cursor: pointer;
+
+            .post-data-cont-top,
+            .post-data-cont-bottom {
+                opacity: 1 !important;
+                // pointer-events: none;
+            }
+
+            .post-hover {
+                opacity: 1 !important;
+                cursor: pointer;
+                // pointer-events: none;
+            }
+        }
+
+        .grid-item {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 10px;
+            column-span: 1;
+            // aspect-ratio: 1/1;
+            background: $Black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            break-inside: avoid-column;
+            // float: left;
+
+            .post-data-cont-top,
+            .post-data-cont-bottom {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                position: absolute;
+                // background: red;
+                overflow: hidden;
+                z-index: 2;
+                opacity: 0;
+                // pointer-events: none;
+                transition: opacity .2s ease;
+                // background: green;
+            }
+
+            .post-data-cont-top {
+                flex-direction: row;
+                // justify-content: space-between;
+                // height: 55px;
+                top: 0;
+                left: 0;
+                padding: 15px 22px;
+
+                .post-avatar-cont,
+                .post-like-cont {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                    // background: blue;
+                }
+
+                .post-avatar-cont {
+                    margin-left: 0;
+
+                    img {
+                        height: 42px;
+                        width: 42px;
+                        border-radius: 50%;
+                        border: solid 2px $White;
+                        background: $PrimaryGreen;
+                        object-fit: cover;
+                    }
+                }
+
+                .post-like-cont {
+
+                    margin-right: 0;
+                    padding: 0 2px;
+
+                    i {
+                        color: $White;
+                        font-size: 32px;
+                    }
+                }
+            }
+
+            .post-data-cont-bottom {
+                flex-direction: column;
+                justify-content: center;
+                bottom: 0;
+                right: 0;
+                color: $White;
+
+                i {
+                    font-size: 32px;
+                }
+
+                .post-location {
+                    font-size: 30px;
+                    text-transform: capitalize;
+                    margin: 0;
+                    line-height: 28px;
+                }
+
+                .view-more {
+                    font-size: 20px;
+                    text-transform: capitalize;
+                }
+
+
+            }
+
+            .post-hover {
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                z-index: 1;
+                background: linear-gradient(0deg, rgba(57, 54, 51, .95) 10%, rgba(57, 54, 51, .25) 95%);
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity .2s ease;
+            }
+
+
+            .post-img {
+                width: 100%;
+            }
+
+        }
+
+    }
+
+}
+
+.page-disable {
+    overflow: hidden !important;
+    height: 100vh !important;
+}
+
+.active-post-modal {
+    transform: translateX(0) !important;
+    visibility: visible !important;
+    transition: transform .25s ease-in-out, visibility .25s ease-in-out !important;
+}
+
+.post-modal {
+    // min-width: 300px;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    // overflow: scroll;
+    top: 0;
+    left: 0;
+    z-index: 25;
+    background: rgba(57, 54, 51, 1);
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    flex-direction: column;
+    transition: transform .25s ease-in-out, visibility .25s ease-in-out;
+    transform: translateX(100vw);
+
+    .exit-modal {
+        width: 100%;
+        height: 45px;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        top: 0;
+        right: 0;
+        // padding: 10px;
+        z-index: 75;
+        // background: $Black;
+
+        .exit-modal-icon {
+            font-size: 24px;
+            color: $White;
+            -webkit-text-stroke: 1px $White;
+            cursor: pointer;
+        }
+    }
+
+    .post-modal-cont::-webkit-scrollbar {
+        display: none;
+    }
+
+    .post-modal-cont {
+        position: relative;
+        top: 45px;
+        width: 100%;
+        min-height: calc(100vh - 50px);
+        height: auto;
+        background: $White;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        overflow: scroll;
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+
+        .img-cont {
+            width: 100%;
+            // min-height: 25vh;
+            background: $Black;
+            border-bottom: solid 2px $Black;
+            // aspect-ratio: 1.25/1;
+            overflow: hidden;
+            position: relative;
+
+            img {
+                width: 100%;
+                max-height: 42vh;
+                object-fit: contain;
+            }
+        }
+
+
+
+        .post-modal-content-cont {
+            width: 100%;
+            min-height: 57.5vh;
+            flex: 1;
+            top: 0;
+            // background: green;
+            display: flex;
+            align-items: center;
+            justify-content: stretch;
+            flex-direction: column;
+
+            .post-user-cont,
+            .post-comments-cont,
+            .post-add-comment-cont {
+                width: 100%;
+            }
+
+            .post-caption-cont {
+                width: 100%;
+                background: $White;
+                border-bottom: solid 2px $Black;
+                padding: 10px 20px;
+
+                p {
+                    font-family: 'PP Neue Montreal Regular';
+                    font-size: 16px;
+                    margin: 0;
+                }
+            }
+
+            .post-user-cont {
+                height: 90px;
+                max-height: 90px;
+                background: $White;
+                border-bottom: solid 2px $Black;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: row;
+                position: relative;
+                padding: 10px 20px;
+                gap: 10px;
+
+                .post-user-img {
+                    height: 60px;
+                    width: 60px;
+                    border-radius: 50%;
+                    border: solid 2px $Black;
+                    display: inline-block;
+                    object-fit: cover;
+                    // background-color: orange;
+                    margin: 0;
+                    // margin-right: 6px;
+                }
+
+                .post-user-details {
+                    margin-left: 0;
+                    position: relative;
+                    // background-color: red;
+                    max-width: 60%;
+                    display: inline-block;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    flex-shrink: 1;
+                    font-size: 16px;
+                    // background-color: green;
+
+                    .post-user-name {
+                        font-weight: 800;
+                        margin: 0;
+                        display: block;
+                        font-family: 'PP Neue Montreal Bold';
+                        font-size: 20px;
+                        // background-color: pink;
+
+                    }
+
+                    .post-location {
+                        text-align: left;
+                        margin: 0;
+                        display: block;
+                        font-family: 'PP Neue Montreal Regular';
+                        // background-color: yellow;
+                    }
+                }
+
+                .post-interactions-cont {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex-direction: row;
+                    position: relative;
+                    margin-right: 0;
+                    gap: 10px;
+
+                    i {
+                        font-size: 34px;
+                        // background: red;
+                        line-height: 34px;
+                        padding: 3px;
+                    }
+                }
+            }
+
+            .post-comments-cont {
+                // min-height: 1700px;
+                width: 100%;
+                padding-bottom: 120px;
+                flex: 1;
+                background: $White;
+                font-family: 'PP Neue Montreal Regular';
+                display: flex;
+                // align-items: center;
+                justify-content: flex-start;
+                flex-direction: column;
+                // background: blue;
+
+                .new-comment:last-child {
+                    animation: new-comment-highlight 3.25s ease forwards;
+                    bottom: 0;
+                }
+
+                @keyframes new-comment-highlight {
+                    0% {
+                        background: rgba(57, 54, 51, 0.15);
+                    }
+
+                    50% {
+                        background: rgba(57, 54, 51, 0.15);
+                    }
+
+                    100% {
+                        background: rgba(57, 54, 51, 0);
+                    }
+                }
+
+
+                .comment {
+                    width: 100%;
+                    // background: pink;
+                    display: flex;
+                    height: auto;
+                    // align-items: center;
+                    justify-content: space-between;
+                    flex-direction: row;
+                    padding: 10px 20px;
+                    gap: 10px;
+                    font-family: 'PP Neue Montreal Regular';
+                    min-height: 50px;
+
+                    .comment-user-img {
+                        height: 48px;
+                        width: 48px;
+                        border-radius: 50%;
+                        border: solid 2px $Black;
+                        display: inline-block;
+                        margin: 0;
+                        object-fit: cover;
+                    }
+
+                    .comment-content {
+                        width: 100%;
+                        flex: 1;
+                        height: auto;
+
+                        p {
+                            margin: 10px auto 0;
+                            font-size: 16px;
+
+                            .comment-user-name {
+                                font-family: 'PP Neue Montreal Bold';
+                                margin-right: 5px;
+                            }
+                        }
+
+                        .at-tag {
+                            color: $PrimaryGreen;
+                            font-family: 'PP Neue Montreal Bold';
+                        }
+                    }
+                }
+
+            }
+
+            .post-add-comment-cont {
+                min-height: 75px;
+                background: $White;
+                border-top: solid 2px $Black;
+                position: fixed;
+                bottom: 0;
+                z-index: 100;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: row;
+                padding: 10px 20px;
+                gap: 10px;
+                font-family: 'PP Neue Montreal Regular';
+
+                .current-user-img {
+                    height: 48px;
+                    width: 48px;
+                    border-radius: 50%;
+                    border: solid 2px $Black;
+                    display: inline-block;
+                    // background-color: orange;
+                    margin: 0;
+                    object-fit: cover;
+                    // margin-right: 6px;
+                }
+
+                .not-logged-in {
+                    opacity: .5 !important;
+                    pointer-events: none;
+                }
+
+                .comment-input {
+                    min-height: 20px;
+                    height: 100%;
+                    margin-left: 0;
+                    position: relative;
+                    flex: 1;
+                    outline: 0;
+                    border: 0;
+                    background: none;
+                    height: 48px;
+                    padding: 3px 5px;
+                    color: $Black;
+                    resize: none;
+                    // overflow-y: hidden;
+                    font-size: 18px;
+
+                    // max-width: 60%;
+                }
+
+                .post-new-comment {
+                    font-size: 34px;
+                    // background: red;
+                    line-height: 34px;
+                    padding: 3px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// TABLET
+
+@media screen and (min-width: 768px) {
+    .feed-grid-section {
+        width: 100%;
+        background: $White;
+        padding: 40px 20px;
+
+        .feed-grid-cont {
+            width: 92%;
+            margin: auto;
+            column-count: 2;
+            column-gap: 10px;
+        }
+    }
+
+    .active-post-modal {
+        // transform: translateX(0) !important;
+        opacity: 1 !important;
+        transition: opacity .25s ease-in-out 0s !important;
+
+    }
+
+    .post-modal {
+        // min-width: 300px;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        // overflow: scroll;
+        top: 0;
+        left: 0;
+        z-index: 25;
+        background: rgba(57, 54, 51, 0.65);
+        backdrop-filter: blur(1px);
+        visibility: visible;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition: opacity 2.25s ease-in-out 0s;
+        opacity: 0;
+        // transform: translateX(100vw);
+
+
+        .exit-modal {
+            width: 100%;
+            height: 75px;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            top: 0;
+            right: 0px;
+            // margin-bottom: 10px;
+            // padding: 10px;
+            z-index: 75;
+            // background: red;
+
+            .exit-modal-icon {
+                font-size: 24px;
+                color: $White;
+                -webkit-text-stroke: 1px $White;
+                text-shadow: 0px 0px 8px rgba(23, 23, 23, 0.35);
+                // margin-right: 0;
+                // background: blue;
+            }
+        }
+
+        .post-modal-cont::-webkit-scrollbar {
+            display: none;
+        }
+
+        .post-modal-cont {
+            position: relative;
+            top: 25px;
+            width: 96%;
+            min-height: calc(100vh - 100px);
+            max-height: calc(100vh - 100px);
+            height: calc(100vh - 90px);
+            border: solid 2px $Black;
+            // background: red;
+            margin-top: 0;
+            // background: blue;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: row;
+            overflow: scroll;
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            box-shadow: 0px 0px 8px 0px rgba(23, 23, 23, 0.35);
+
+            .img-cont {
+                height: 100%;
+                width: 55%;
+                // min-height: 25vh;
+                background: $Black;
+                border-right: none;
+                border-right: solid 2px $Black;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                position: sticky;
+                top: 0;
+                left: 0;
+                // aspect-ratio: 1.25/1;
+
+                img {
+                    position: sticky;
+                    top: 0;
+                    max-width: 100%;
+                    width: 100%;
+                    height: 100%;
+                    max-height: 100%;
+                    object-fit: contain;
+                }
+            }
+
+
+
+            .post-modal-content-cont {
+                width: 45%;
+                height: 100%;
+                // min-height: 54.5vh;
+                // flex: 1;
+                top: 0;
+                // background: green;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: stretch;
+                flex-direction: column;
+                // overflow: scroll;
+
+                .post-user-cont,
+                .post-comments-cont,
+                .post-add-comment-cont {
+                    width: 100%;
+                }
+
+                .post-caption-cont {
+                    width: 100%;
+                    background: $White;
+                    border-bottom: solid 2px $Black;
+                    padding: 25px 20px;
+
+                    p {
+                        font-family: 'PP Neue Montreal Regular';
+                        font-size: 16px;
+                        margin: 0;
+                    }
+                }
+
+                .post-user-cont {
+                    height: 100px;
+                    min-height: 100px;
+                    max-height: 100px;
+                    // background: red;
+                    border-bottom: solid 2px $Black;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex-direction: row;
+                    position: relative;
+                    padding: 10px 20px;
+                    gap: 10px;
+
+                    .post-user-img {
+                        height: 60px;
+                        width: 60px;
+                        border-radius: 50%;
+                        border: solid 2px $Black;
+                        display: inline-block;
+                        object-fit: cover;
+                        // background-color: orange;
+                        margin: 0;
+                        // margin-right: 6px;
+                    }
+
+                    .post-user-details {
+                        margin-left: 0;
+                        position: relative;
+                        // background-color: red;
+                        max-width: 60%;
+                        display: inline-block;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        overflow: hidden;
+                        flex-shrink: 1;
+                        font-size: 16px;
+                        // background-color: green;
+
+                        .post-user-name {
+                            font-weight: 800;
+                            margin: 0;
+                            display: block;
+                            font-family: 'PP Neue Montreal Bold';
+                            font-size: 20px;
+                            // background-color: pink;
+
+                        }
+
+                        .post-location {
+                            text-align: left;
+                            margin: 0;
+                            display: block;
+                            font-family: 'PP Neue Montreal Regular';
+                            // background-color: yellow;
+                        }
+                    }
+
+                    .post-interactions-cont {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        flex-direction: row;
+                        position: relative;
+                        margin-right: 0;
+                        gap: 10px;
+
+                        i {
+                            font-size: 34px;
+                            // background: red;
+                            line-height: 34px;
+                            padding: 3px;
+                        }
+                    }
+                }
+
+                .post-comments-cont {
+                    // min-height: 1700px;
+                    width: 100%;
+                    padding-top: 0px;
+                    padding-bottom: 0px;
+                    flex: 1;
+                    background: $White;
+                    font-family: 'PP Neue Montreal Regular';
+                    display: flex;
+                    // align-items: center;
+                    justify-content: flex-start;
+                    flex-direction: column;
+                    // background: blue;
+
+                    .new-comment:last-child {
+                        animation: new-comment-highlight 3.25s ease;
+                        bottom: 0;
+                    }
+
+                    @keyframes new-comment-highlight {
+                        0% {
+                            background: rgba(57, 54, 51, 0.15);
+                        }
+
+                        80% {
+                            background: rgba(57, 54, 51, 0.15);
+                        }
+
+                        100% {
+                            background: rgba(57, 54, 51, 0);
+                        }
+                    }
+
+                    .comment:hover,
+                    .new-comment:hover {
+                        background: rgba(57, 54, 51, 0.15) !important;
+                        transition: background 0.15s ease;
+                    }
+
+                    .comment {
+                        width: 100%;
+                        background: $White;
+                        display: flex;
+                        height: auto;
+                        // align-items: center;
+                        justify-content: space-between;
+                        flex-direction: row;
+                        padding: 12px 20px;
+                        gap: 10px;
+                        font-family: 'PP Neue Montreal Regular';
+                        min-height: 50px;
+                        transition: background 0.15s ease;
+
+                        .comment-user-img {
+                            height: 48px;
+                            width: 48px;
+                            border-radius: 50%;
+                            border: solid 2px $Black;
+                            display: inline-block;
+                            margin: 0;
+                            object-fit: cover;
+                        }
+
+                        .comment-content {
+                            width: 100%;
+                            flex: 1;
+                            height: auto;
+
+                            p {
+                                margin: 10px auto 0px;
+                                font-size: 16px;
+
+                                .comment-user-name {
+                                    font-family: 'PP Neue Montreal Bold';
+                                    margin-right: 5px;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                .post-add-comment-cont {
+                    min-height: 80px;
+                    background: $White;
+                    width: 100%;
+                    border-top: solid 2px $Black;
+                    position: sticky;
+                    bottom: 0px;
+                    right: 100%;
+                    z-index: 100;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex-direction: row;
+                    padding: 25px 20px;
+                    gap: 10px;
+                    font-family: 'PP Neue Montreal Regular';
+                    // opacity: 0;
+
+                    .current-user-img {
+                        height: 48px;
+                        width: 48px;
+                        border-radius: 50%;
+                        border: solid 2px $Black;
+                        display: inline-block;
+                        // background-color: orange;
+                        margin: 0;
+                        object-fit: cover;
+                        // margin-right: 6px;
+                    }
+
+                    .comment-input {
+                        min-height: 20px;
+                        height: 100%;
+                        margin-left: 0;
+                        position: relative;
+                        flex: 1;
+                        outline: 0;
+                        border: none;
+                        background: none;
+                        height: 48px;
+                        padding: 3px 5px;
+                        color: $Black;
+                        resize: none;
+                        // overflow-y: hidden;
+                        font-size: 18px;
+
+                        // max-width: 60%;
+                    }
+
+                    .post-new-comment {
+                        font-size: 34px;
+                        // background: red;
+                        line-height: 34px;
+                        padding: 3px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// DESKTOP 
+// @media screen and (min-width: 1440px) {
+
+//     .post-modal {
+//         width: 100vw;
+//         height: 100vh;
+//         position: absolute;
+//         overflow: hidden;
+//         top: 0;
+//         left: 0;
+//         z-index: 25;
+//         background: rgba(57, 54, 51, 0.75);
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         padding: 20px 100px;
+
+//         .exit-modal {
+//             position: absolute;
+//             top: 20px;
+//             right: 30px;
+//             padding: 5px;
+
+//             .exit-modal-icon {
+//                 font-size: 30px;
+//                 color: $White;
+//                 -webkit-text-stroke: 2px $White;
+//             }
+//         }
+
+//         .post-modal-cont {
+
+//             width: 1080px;
+//             min-width: 1180px;
+//             min-height: 80vh;
+//             aspect-ratio: 1/0.75;
+//             background: red;
+//             background: $White;
+//         }
+//     }
+
+//     .feed-grid-section {
+//         width: 100%;
+//         background: $White;
+//         padding: 50px 20px;
+
+//         .feed-grid-cont {
+//             // width: 98%;
+//             max-width: 1420px;
+//             margin: auto;
+//             column-count: 3;
+//             column-gap: 10px;
+//         }
+//     }
+// }
+
+@media screen and (min-width: 1440px) {
+
+    .feed-grid-section {
+        width: 100%;
+        background: $White;
+        padding: 50px 20px;
+
+        .feed-grid-cont {
+            // width: 98%;
+            max-width: 1420px;
+            margin: auto;
+            column-count: 3;
+            column-gap: 10px;
+        }
+    }
+
+    .active-post-modal {
+        // transform: translateX(0) !important;
+        opacity: 1 !important;
+        transition: opacity .25s ease-in-out 0s !important;
+
+    }
+
+    .post-modal {
+        // min-width: 300px;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        // overflow: scroll;
+        top: 0;
+        left: 0;
+        z-index: 25;
+        background: rgba(57, 54, 51, 0.65);
+        backdrop-filter: blur(1px);
+        visibility: visible;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition: opacity 2.25s ease-in-out 0s;
+        opacity: 0;
+        // transform: translateX(100vw);
+
+
+        .exit-modal {
+            width: 100%;
+            height: 75px;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            top: 0;
+            right: 0px;
+            // margin-bottom: 10px;
+            // padding: 10px;
+            z-index: 75;
+            // background: red;
+
+            .exit-modal-icon {
+                font-size: 24px;
+                color: $White;
+                -webkit-text-stroke: 1px $White;
+                text-shadow: 0px 0px 8px rgba(23, 23, 23, 0.35);
+                margin-right: 25px;
+                // background: blue;
+            }
+        }
+
+        .post-modal-cont::-webkit-scrollbar {
+            display: none;
+        }
+
+        .post-modal-cont {
+            position: relative;
+            top: 0px;
+            width: 80%;
+            max-width: 1200px;
+            min-height: calc(100vh - 80px);
+            max-height: calc(100vh - 80px);
+            height: calc(100vh - 80px);
+            border: solid 2px $Black;
+            // background: red;
+            margin-top: 0;
+            // background: blue;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: row;
+            overflow: scroll;
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            box-shadow: 0px 0px 8px 0px rgba(23, 23, 23, 0.35);
+
+            .img-cont {
+                height: 100%;
+                width: 55%;
+                // min-height: 25vh;
+                background: $Black;
+                border-right: none;
+                border-right: solid 2px $Black;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                position: sticky;
+                top: 0;
+                left: 0;
+                // aspect-ratio: 1.25/1;
+
+                img {
+                    position: sticky;
+                    top: 0;
+                    max-width: 100%;
+                    width: 100%;
+                    height: 100%;
+                    max-height: 100%;
+                    object-fit: contain;
+                }
+            }
+
+
+
+            .post-modal-content-cont {
+                width: 45%;
+                height: 100%;
+                // min-height: 54.5vh;
+                // flex: 1;
+                top: 0;
+                // background: green;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: stretch;
+                flex-direction: column;
+                // overflow: scroll;
+
+                .post-user-cont,
+                .post-comments-cont,
+                .post-add-comment-cont {
+                    width: 100%;
+                }
+
+                .post-caption-cont {
+                    width: 100%;
+                    background: $White;
+                    border-bottom: solid 2px $Black;
+                    padding: 25px 20px;
+
+                    p {
+                        font-family: 'PP Neue Montreal Regular';
+                        font-size: 16px;
+                        margin: 0;
+                    }
+                }
+
+                .post-user-cont {
+                    height: 100px;
+                    min-height: 100px;
+                    max-height: 100px;
+                    // background: red;
+                    border-bottom: solid 2px $Black;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex-direction: row;
+                    position: relative;
+                    padding: 10px 20px;
+                    gap: 10px;
+
+                    .post-user-img {
+                        height: 60px;
+                        width: 60px;
+                        border-radius: 50%;
+                        border: solid 2px $Black;
+                        display: inline-block;
+                        object-fit: cover;
+                        // background-color: orange;
+                        margin: 0;
+                        // margin-right: 6px;
+                    }
+
+                    .post-user-details {
+                        margin-left: 0;
+                        position: relative;
+                        // background-color: red;
+                        max-width: 60%;
+                        display: inline-block;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        overflow: hidden;
+                        flex-shrink: 1;
+                        font-size: 16px;
+                        // background-color: green;
+
+                        .post-user-name {
+                            font-weight: 800;
+                            margin: 0;
+                            display: block;
+                            font-family: 'PP Neue Montreal Bold';
+                            font-size: 20px;
+                            // background-color: pink;
+
+                        }
+
+                        .post-location {
+                            text-align: left;
+                            margin: 0;
+                            display: block;
+                            font-family: 'PP Neue Montreal Regular';
+                            // background-color: yellow;
+                        }
+                    }
+
+                    .post-interactions-cont {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        flex-direction: row;
+                        position: relative;
+                        margin-right: 0;
+                        gap: 10px;
+
+                        i {
+                            font-size: 34px;
+                            // background: red;
+                            line-height: 34px;
+                            padding: 3px;
+                        }
+                    }
+                }
+
+                .post-comments-cont {
+                    // min-height: 1700px;
+                    width: 100%;
+                    padding-top: 0px;
+                    padding-bottom: 0px;
+                    flex: 1;
+                    background: $White;
+                    font-family: 'PP Neue Montreal Regular';
+                    display: flex;
+                    // align-items: center;
+                    justify-content: flex-start;
+                    flex-direction: column;
+                    // background: blue;
+
+                    .new-comment:last-child {
+                        animation: new-comment-highlight 3.25s ease;
+                        bottom: 0;
+                    }
+
+                    @keyframes new-comment-highlight {
+                        0% {
+                            background: rgba(57, 54, 51, 0.15);
+                        }
+
+                        80% {
+                            background: rgba(57, 54, 51, 0.15);
+                        }
+
+                        100% {
+                            background: rgba(57, 54, 51, 0);
+                        }
+                    }
+
+                    .comment:hover,
+                    .new-comment:hover {
+                        background: rgba(57, 54, 51, 0.15) !important;
+                        transition: background 0.15s ease;
+                    }
+
+                    .comment {
+                        width: 100%;
+                        background: $White;
+                        display: flex;
+                        height: auto;
+                        // align-items: center;
+                        justify-content: space-between;
+                        flex-direction: row;
+                        padding: 12px 20px;
+                        gap: 10px;
+                        font-family: 'PP Neue Montreal Regular';
+                        min-height: 50px;
+                        transition: background 0.15s ease;
+
+                        .comment-user-img {
+                            height: 48px;
+                            width: 48px;
+                            border-radius: 50%;
+                            border: solid 2px $Black;
+                            display: inline-block;
+                            margin: 0;
+                            object-fit: cover;
+                        }
+
+                        .comment-content {
+                            width: 100%;
+                            flex: 1;
+                            height: auto;
+
+                            p {
+                                margin: 10px auto 0px;
+                                font-size: 16px;
+
+                                .comment-user-name {
+                                    font-family: 'PP Neue Montreal Bold';
+                                    margin-right: 5px;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                .post-add-comment-cont {
+                    min-height: 80px;
+                    background: $White;
+                    width: 100%;
+                    border-top: solid 2px $Black;
+                    position: sticky;
+                    bottom: 0px;
+                    right: 100%;
+                    z-index: 100;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex-direction: row;
+                    padding: 25px 20px;
+                    gap: 10px;
+                    font-family: 'PP Neue Montreal Regular';
+                    // opacity: 0;
+
+                    .current-user-img {
+                        height: 48px;
+                        width: 48px;
+                        border-radius: 50%;
+                        border: solid 2px $Black;
+                        display: inline-block;
+                        // background-color: orange;
+                        margin: 0;
+                        object-fit: cover;
+                        // margin-right: 6px;
+                    }
+
+                    .comment-input {
+                        min-height: 20px;
+                        height: 100%;
+                        margin-left: 0;
+                        position: relative;
+                        flex: 1;
+                        outline: 0;
+                        border: none;
+                        background: none;
+                        height: 48px;
+                        padding: 3px 5px;
+                        color: $Black;
+                        resize: none;
+                        // overflow-y: hidden;
+                        font-size: 18px;
+
+                        // max-width: 60%;
+                    }
+
+                    .post-new-comment {
+                        font-size: 34px;
+                        // background: red;
+                        line-height: 34px;
+                        padding: 3px;
+                    }
+                }
+            }
+        }
+    }
+}

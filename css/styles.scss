@@ -1,0 +1,32 @@
+// @import "./modules/variables.scss";
+// @import "./modules/footer.scss";
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import 'modules/variables.scss';
+@import 'modules/nav.scss';
+@import 'modules/masonry.scss';
+@import 'modules/footer.scss';
+@import 'modules/login.scss';
+@import 'modules/signup.scss';
+@import 'modules/create-post-modal.scss';
+@import 'modules/edit-modal.scss';
+
+body {
+    background: $Brown;
+    width: 100vw;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+h1 {
+    @include H1;
+}
+
+// mobile 425px 
+// tablet 768px 
+// desktop 1440px
